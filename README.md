@@ -17,7 +17,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/otoil/shadowsocks-
 
 配置文件路径：/etc/shadowsocks.json
 
-使用命令：
+# 使用命令：
 
 启动：/etc/init.d/shadowsocks start
 
