@@ -24,3 +24,4 @@ chmod +x shadowsocks-check-firewall.sh
 停止：/etc/init.d/shadowsocks stop
 重启：/etc/init.d/shadowsocks restart
 状态：/etc/init.d/shadowsocks status
+
