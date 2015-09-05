@@ -13,7 +13,7 @@ shadowsocks-python
 
 安装之前确保 firewall/iptable 是在启动的状态.
 
-wget --no-check-certificate https://raw.githubusercontent.com/otoil/shadowsocks-python/master/shadowsocks-check-firewall.sh && chmod +x shadowsocks-check-firewall.sh && ./shadowsocks-check-firewall.sh 2>&1 | tee shadowsocks.log
+wget --no-check-certificate https://raw.githubusercontent.com/otoil/shadowsocks-python-install/master/shadowsocks-check-firewall.sh && chmod +x shadowsocks-check-firewall.sh && ./shadowsocks-check-firewall.sh 2>&1 | tee shadowsocks.log
 
 配置文件路径：/etc/shadowsocks.json
 
