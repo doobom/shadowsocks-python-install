@@ -146,7 +146,7 @@ function download_files(){
     if [ "$OS" == 'CentOS' ]; then
 	if [ -s ez_setup.py ]; then
 	    echo "ez_setup.py [found]"
-        elif [ ! wget --no-check-certificate https://bootstrap.pypa.io/ez_setup.py -O ./ez_setup.py ]; then
+        elif ! wget --no-check-certificate https://bootstrap.pypa.io/ez_setup.py -O ./ez_setup.py; then
             echo "Failed to download ez_setup.py!"
             exit 1
         fi
@@ -154,12 +154,12 @@ function download_files(){
 	if [ -s shadowsocks ]; then
 	    echo "shadowsocks [found]"
 	    cp -f ./shadowsocks /etc/init.d/shadowsocks
-        elif [ ! wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks -O ./shadowsocks && cp -f ./shadowsocks /etc/init.d/shadowsocks ]; then
+        elif ! wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks -O ./shadowsocks && cp -f ./shadowsocks /etc/init.d/shadowsocks; then
             echo "Failed to download shadowsocks chkconfig file!"
             exit 1
         fi
     else
-        if [ ! wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-debian -O ./shadowsocks && cp -f ./shadowsocks /etc/init.d/shadowsocks ]; then
+        if ! wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-debian -O ./shadowsocks && cp -f ./shadowsocks /etc/init.d/shadowsocks; then
             echo "Failed to download shadowsocks chkconfig file!"
             exit 1
         fi
