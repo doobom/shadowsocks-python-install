@@ -145,23 +145,23 @@ function pre_install(){
 function download_files(){
     if [ "$OS" == 'CentOS' ]; then
 	if [ -s ez_setup.py ]; then
-	    echo "ez_setup.py [found]"
+	    echo "Python ez_setup.py [found]"
         else
-            echo "ez_setup.py not found!!! download now..."
+            echo "Python ez_setup.py not found!!! download now..."
             wget --no-check-certificate https://bootstrap.pypa.io/ez_setup.py -O ./ez_setup.py
             if [ $? -eq 0 ]; then
-	        echo "Download ez_setup.py successfully!"
+	        echo "Download python ez_setup.py successfully!"
   	    else
-                echo "Failed to download ez_setup.py!"
+                echo "Failed to download python ez_setup.py!"
                 exit 1
             fi
         fi
         # Download shadowsocks chkconfig file
 	if [ -s shadowsocks ]; then
-	    echo "shadowsocks [found]"
+	    echo "shadowsocks chkconfig file [found]"
 	    cp -f ./shadowsocks /etc/init.d/shadowsocks
         else
-            echo "shadowsock not fount!!! download now..."
+            echo "shadowsock chkconfig file not fount!!! download now..."
             wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks -O ./shadowsocks && cp -f ./shadowsocks /etc/init.d/shadowsocks
             if [ $? -eq 0 ]; then
 	        echo "Download shadowsocks chkconfig file successfully!"
@@ -208,7 +208,7 @@ if [[ ${firewalldisactive} = 'active' ]]; then
 ########  firewall set 
 #允许防火墙端口
     echo "firewall start setting..."
-    cat >/usr/lib/firewalld/services/shadowsocks.xml<<EOF
+    cat > /usr/lib/firewalld/services/shadowsocks.xml<<-EOF
 <?xml version="1.0" encoding="utf-8"?>
 <service>
   <short>shadowsocks</short>
