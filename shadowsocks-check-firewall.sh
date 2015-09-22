@@ -214,6 +214,7 @@ if [[ ${firewalldisactive} = 'active' ]]; then
   <short>shadowsocks</short>
   <description>Shadowsocks is a protocol to Fuck GFW. You need the Shadowsocks client to useful.</description>
   <port protocol="tcp" port="${shadowsocksport}"/>
+  <port protocol="udp" port="${shadowsocksport}"/>
 </service>
 EOF
     firewall-cmd --permanent --add-service=shadowsocks
